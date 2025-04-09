@@ -7,7 +7,7 @@ Type=simple
 DynamicUser=yes
 Restart=on-failure
 RestartSec=5s
-ExecStart=/usr/bin/vlmcsd -j /etc/vlmcsd/vlmcsd.kmd -l syslog -D
+ExecStart=/usr/bin/vlmcsd -l syslog -D
 
 [Install]
 WantedBy=multi-user.target
