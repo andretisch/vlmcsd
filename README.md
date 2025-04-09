@@ -10,6 +10,12 @@ bash <(curl -L -s https://raw.githubusercontent.com/ActiveIce/vlmcsd/master/depl
 ```
 
 ## Способ использования
+Если у вас используется Microsoft DNS, вы можете создать _VLMCS запись для автоматического поиска KMS сервера клиентами в домене. Для создания записи в DNS используйте такую команду PowerShell:
+Add-DnsServerResourceRecord -Srv -Name "_VLMCS._tcp" -ZoneName "winitpro.ri" -DomainName "192.168.14.147" -Priority 0 -Weight 0 -Port 1688
+
+Где 192.168.14.147 – IP адрес вашего Linux сервера со службой KMS.
+
+Теперь все хосты Windows (и Office) в домене будут автоматически активироваться на KMS сервере, если на них установлен публичный ключ корпоративной активации (GVLK).
 
 Запустите Windows Powershell (администратор) и введите следующие команды
 
